@@ -1,0 +1,21 @@
+header {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1em;
+  background: rgb(61,182,132);
+  background: linear-gradient(174deg, rgb(60 255 174) 2%, rgb(24 215 133) 88%);
+  box-shadow: 1px 3px 11px #0000001f;
+}
+
+header img {
+  -webkit-filter: drop-shadow(2px 3px 8px rgba(0,0,0,0.35));
+}
+
+header h2 {
+  margin: 0.5em;
+  color: rgb(49 49 49);
+  letter-spacing: -0.02em;
+}
