@@ -1,3 +1,33 @@
+section.compose .form-textinput {
+  display: flex;
+  flex-direction: column;
+}
+
+section.compose .form-textinput textarea {
+  border: 0;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  height: 2.8em;
+  background-color: transparent;
+}
+
+section.compose .form-textinput textarea:focus {
+  border: 0;
+  border-bottom: 1px solid #000000;
+}
+
+section.compose .form-extrabits {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Bungee', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+section.compose .form-extrabits .button {
+  font-family: 'Bungee', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
 .negative {
   color: red;
 }
