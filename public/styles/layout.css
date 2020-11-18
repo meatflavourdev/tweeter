@@ -5,6 +5,7 @@
  */
 html {
   box-sizing: border-box;
+  background-color: #f4f1ec;
 }
 
 html, body {
@@ -27,13 +28,17 @@ html, body {
 }
 
 body {
+  height: auto;
   width: 100%;
   color: #545149;
-  background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
+}
+
+header {
+  margin-top: 90px;
 }
 
 main {
