@@ -46,6 +46,7 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="/scripts/nav-fixed.js"></script>
+    <script type="text/javascript" src="/scripts/compose-text.js"></script>
   </head>
 
   <body>
@@ -68,12 +69,12 @@
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="mt-6 px-6">
+    <main class="px-6">
       <section class="compose container card px-6 py-5 mb-5 new-tweet">
         <form action="/tweets/" method="post">
           <div class="form-textinput">
-            <label for="tweet-text">What are you humming about?</label>
-            <textarea name="text" id="tweet-text" placeholder=""></textarea>
+            <label id="tweet-message" for="tweet-text"></label>
+            <textarea name="text" id="tweet-text" title="tweet-text"></textarea>
           </div>
           <div class="form-extrabits mt-3">
             <button class="button is-primary" type="submit">Tweet</button>
