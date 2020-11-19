@@ -39,6 +39,7 @@ article.post:hover .profile-username{
 
 article.post .post-body {
   border-bottom: 1px solid #000000;
+  overflow-wrap: break-word;
 }
 
 article.post footer {
