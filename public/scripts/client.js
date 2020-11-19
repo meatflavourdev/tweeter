@@ -4,41 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const postData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Jeff Goldblum",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@goldcanstay" },
-    "content": {
-      "text": "They're using our own satellites against us. And the clock is ticking."
-    },
-    "created_at": 1464113959088
-  }
-];
-
 const createPostElement = function(post) {
   return `
   <article class="post card is-primary">
@@ -78,7 +43,18 @@ const submitPost = function (event) {
     console.log("Compose form submission failed", error);
   });
 };
+
+const loadPosts = function () {
+  $.get('/tweets/', function (data) {
+    renderPosts(data);
+    console.log('Fetch posts from server succeeded');
+  }).fail((error) => {
+    console.log('Fetch posts from server failed', error);
+  });
+};
+
 $(document).ready(function() {
   // Compose form submit event handler
   $("#compose-form").on("submit", submitPost);
+  loadPosts();
 });
