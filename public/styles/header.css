@@ -7,17 +7,20 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 1em;
-  background: rgb(61,182,132);
-  background: linear-gradient(174deg, rgb(60 255 174) 2%, rgb(24 215 133) 88%);
+  background: rgb(0, 245, 151);
   box-shadow: 1px 3px 11px #0000001f;
 }
 
-#header-main-profile img {
+#header-main-profile .profile-image {
+  background-color: white;
+  height: 256px;
+  width: 256px;
+  border-radius: 100%;
   -webkit-filter: drop-shadow(2px 3px 8px rgba(0,0,0,0.35));
 }
 
 #header-main-profile h2 {
-  margin: 0.5em;
-  color: rgb(49 49 49);
+  color: white;
   letter-spacing: -0.02em;
+  -webkit-filter: drop-shadow(2px 3px 8px rgba(0,0,0,0.35));
 }
