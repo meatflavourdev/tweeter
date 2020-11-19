@@ -30,9 +30,14 @@ const createPostElement = function(post) {
 const getPostID = function(post) {
   return post.user.handle.slice(1) + post.created_at;
 };
+
+const postIDs = [];
 const renderPosts = function(postArray) {
   while (postArray.length) {
-    const $post = createPostElement(postArray.pop());
+    const postJSON = postArray.pop();
+    const postID = getPostID(postJSON);
+    postIDs.push(postID);
+    const $post = createPostElement(postJSON);
     $("#postlist").append($post);
   }
 };
@@ -78,16 +83,17 @@ const submitPost = function (event) {
   // Package and send the form data to the server
   const formData = $("#compose-form").serialize();
   $.post("/tweets/", formData, () => {
-    console.log("Compose form submission succeeded");
+    // Fetch and render new posts
+    loadPosts(renderNewPosts);
   }).fail((error) => {
     console.log("Compose form submission failed", error);
   });
 };
 
-const loadPosts = function () {
+const loadPosts = function (renderCallback) {
   $.get('/tweets/', function (data) {
-    renderPosts(data);
-    console.log('Fetch posts from server succeeded');
+    // Render fetched posts
+    renderCallback(data);
   }).fail((error) => {
     console.log('Fetch posts from server failed', error);
   });
@@ -97,5 +103,5 @@ $(document).ready(function() {
   // Compose form submit event handler
   $("#compose-form").on("submit", submitPost);
   // Display posts from server on load
-  loadPosts();
+  loadPosts(renderPosts);
 });
