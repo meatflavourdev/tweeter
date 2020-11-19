@@ -27,6 +27,9 @@ const createPostElement = function(post) {
   `;
 };
 
+const getPostID = function(post) {
+  return post.user.handle.slice(1) + post.created_at;
+};
 const renderPosts = function(postArray) {
   while (postArray.length) {
     const $post = createPostElement(postArray.pop());
