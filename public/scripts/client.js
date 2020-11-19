@@ -85,6 +85,8 @@ const submitPost = function (event) {
   $.post("/tweets/", formData, () => {
     // Fetch and render new posts
     loadPosts(renderNewPosts);
+    // Clear the form
+    $('#tweet-text').val('');
   }).fail((error) => {
     console.log("Compose form submission failed", error);
   });
