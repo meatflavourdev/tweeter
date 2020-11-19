@@ -44,8 +44,13 @@ header#header-main-profile {
 main {
   margin-top: -1em;
   width: 90vw;
+  max-width: 960px;
   align-self: center;
   flex-grow: 1;
+}
+
+.container {
+
 }
 
 /*
