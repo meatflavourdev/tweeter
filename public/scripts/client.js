@@ -8,17 +8,22 @@ const humanDate = function(dateCreated) {
   const dateNow = dayjs();
   return dateNow.to(dateCreated);
 };
+
+const htmlEncode = function(str) {
+  return he.encode(str);
+};
+
 const createPostElement = function(post) {
   return `
   <article class="post card is-primary">
     <header>
       <div class="profile-info pb-5">
-        <img class=profile-avatar" src="${post.user.avatars}" alt="User Avatar" />
-        <h2 class="has-text-weight-semibold p-3">${post.user.name}</h2>
+        <img class=profile-avatar" src="${htmlEncode(post.user.avatars)}" alt="User Avatar" />
+        <h2 class="has-text-weight-semibold p-3">${htmlEncode(post.user.name)}</h2>
       </div>
-      <h3 class="profile-username">${post.user.handle}</h3>
+      <h3 class="profile-username">${htmlEncode(post.user.handle)}</h3>
     </header>
-    <div class="post-body pb-5 mb-3">${post.content.text}</div>
+    <div class="post-body pb-5 mb-3">${htmlEncode(post.content.text)}</div>
     <footer>
       <span class="post-date">${humanDate(post.created_at)}</span>
       <div class="post-actions">
