@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/compose.css" type="text/css" />
     <link rel="stylesheet" href="/styles/posts.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/toast.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
@@ -55,6 +56,14 @@
   </head>
 
   <body>
+    <!-- Validation Error Display -->
+    <div id="toast-container" style="display: none;">
+      <div class="toast-error notification is-danger">
+        <button class="toast-close"></button>
+        <span id="toast-body"></span>
+      </div>
+    </div>
+
     <!-- Top nav bar (fixed) -->
     <nav class="mainnav">
       <span class="logo">Tweeter</span>
