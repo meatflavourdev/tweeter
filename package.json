@@ -13,10 +13,12 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "chance": "^1.0.2",
+    "dayjs": "^1.9.6",
     "express": "^4.13.4",
     "md5": "^2.1.0"
   },
   "devDependencies": {
+    "he": "^1.2.0",
     "jquery": "^3.5.1",
     "ngrok": "^3.3.0",
     "nodemon": "^1.9.2"
