@@ -37,6 +37,22 @@ const renderPosts = function(postArray) {
   }
 };
 
+const renderNewPosts = function(postArray) {
+  let $collection = [];
+  while (postArray.length) {
+    const postJSON = postArray.pop();
+    const postID = getPostID(postJSON);
+    // Stop once we get to a post we already have
+    if (postIDs.includes(postID)) break;
+    postIDs.push(postID); // Remember the posts that have been seen already
+    // Build an array of new posts
+    const $post = createPostElement(postJSON);
+    $collection.push($post);
+  }
+  // Prepend the new posts to the list
+  $("#postlist").prepend($collection);
+};
+
 const validInput = function() {
   const text = $('#tweet-text').val();
   if (text === null || text === undefined) {
