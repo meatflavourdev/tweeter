@@ -96,6 +96,7 @@ const submitPost = function (event) {
     loadPosts(renderNewPosts);
     // Clear the form
     $('#tweet-text').val('');
+    $('#compose-counter').html('140'); // Reset counter
   }).fail((error) => {
     console.log("Compose form submission failed", error);
   });
