@@ -1,5 +1,23 @@
 /* post.css */
 
+#postlist {
+  margin-bottom: 2em;
+}
+
+article.post {
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: .4rem;
+  box-shadow: none;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  margin-top: 0.75rem;
+  padding: 2rem 3rem;
+}
+
+article.post:hover {
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0.75em 1em -0.125em rgb(10 10 10 / 0.2), 0 0px 2px 1px rgb(10 10 10 / 0.06);
+}
+
 article.post header {
   display: flex;
   justify-content: space-between;
@@ -10,6 +28,13 @@ article.post header .profile-info {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
+}
+
+article.post .profile-username{
+  color: #a7a7a7;
+}
+article.post:hover .profile-username{
+  color: #4a4a4a;
 }
 
 article.post .post-body {
@@ -23,4 +48,5 @@ article.post footer {
 
 article.post footer .post-actions .fa-md {
   height: 1em;
+  padding: 0 0.25em;
 }
