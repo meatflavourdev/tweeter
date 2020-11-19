@@ -34,8 +34,29 @@ const renderPosts = function(postArray) {
   }
 };
 
+const validInput = function() {
+  const text = $('#tweet-text').val();
+  if (text === null || text === undefined) {
+    console.log('Textarea value is null or undefined');
+    return false;
+  }
+  if (!text.length) {
+    console.log('Textarea is empty');
+    return false;
+  }
+  if (text.length > 140) {
+    console.log('Textarea is too long');
+    return false;
+  }
+  // Validate success
+  return true;
+};
+
 const submitPost = function (event) {
   event.preventDefault();
+  // Validate input
+  if (!validInput()) return false;
+  // Package and send the form data to the server
   const formData = $("#compose-form").serialize();
   $.post("/tweets/", formData, () => {
     console.log("Compose form submission succeeded");
