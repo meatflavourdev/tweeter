@@ -56,5 +56,6 @@ const loadPosts = function () {
 $(document).ready(function() {
   // Compose form submit event handler
   $("#compose-form").on("submit", submitPost);
+  // Display posts from server on load
   loadPosts();
 });
