@@ -69,7 +69,16 @@ const renderPosts = function(postArray) {
   }
 };
 
-// Fetch and Render posts on ready
+const submitPost = function (event) {
+  event.preventDefault();
+  const formData = $("#compose-form").serialize();
+  $.post("/tweets/", formData, () => {
+    console.log("Compose form submission succeeded");
+  }).fail((error) => {
+    console.log("Compose form submission failed", error);
+  });
+};
 $(document).ready(function() {
-  renderPosts(postData);
+  // Compose form submit event handler
+  $("#compose-form").on("submit", submitPost);
 });

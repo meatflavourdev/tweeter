@@ -74,13 +74,13 @@
     <!-- Page-specific (main) content here -->
     <main id="page-content" class="px-6">
       <section class="compose container card px-6 py-5 mb-5 new-tweet">
-        <form action="/tweets/" method="post">
+        <form id="compose-form" action="/tweets/" method="post">
           <div class="form-textinput">
             <label id="tweet-message" for="tweet-text"></label>
             <textarea name="text" id="tweet-text" title="tweet-text"></textarea>
           </div>
           <div class="form-extrabits mt-3">
-            <button class="button is-primary" type="submit">Tweet</button>
+            <button id="compose-submit" class="button is-primary" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
