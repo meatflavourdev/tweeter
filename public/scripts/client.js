@@ -28,9 +28,9 @@ const createPostElement = function(post) {
 };
 
 const renderPosts = function(postArray) {
-  for (const post of postArray) {
-    const $post = createPostElement(post);
-    $('#postlist').append($post);
+  while (postArray.length) {
+    const $post = createPostElement(postArray.pop());
+    $("#postlist").append($post);
   }
 };
 
