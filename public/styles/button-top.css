@@ -1,0 +1,12 @@
+/* button-top */
+
+#button-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 2rem;
+  z-index: 1500;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+}
