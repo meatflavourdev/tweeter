@@ -6,10 +6,28 @@
   z-index: 2000;
   width: 100%;
   padding: 2em;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
 }
 
 #toast-container .toast-error {
   text-align: center;
-  max-width: 960px;
-  margin: 0 auto;
+  min-width: 45%;
+  box-shadow: 0px 4px 9px #00000052;
+  transition: opacity 0.1s ease-out, transform 0.1s ease-out;
+  opacity: 1;
+  transform: translate(0px, 0px);
+}
+
+#toast-container .toast-error.toast-hidden {
+  transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+  opacity: 0;
+  transform: translate(0px, 200px);
+}
+
+#toast-container .toast-error .delete {
+  right: 0.25rem;
+  top: 0.25rem;
+  padding: 0.5rem;
 }

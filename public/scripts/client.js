@@ -67,19 +67,24 @@ const renderNewPosts = function(postArray) {
   $("#postlist").prepend($collection);
 };
 
+const displayError = function(msg, err) {
+  $('#toast-body').html(msg);
+  $('#toast-container > .toast-error').show();
+  $('#toast-container .toast-close').on('click', function(e) {
+    $(this).parent().hide();
+  });
+};
+
 const validInput = function() {
   const text = $('#tweet-text').val();
   if (text === null || text === undefined) {
-    console.log('Textarea value is null or undefined');
-    return false;
+    return displayError('Textarea value is null or undefined');
   }
   if (!text.length) {
-    console.log('Textarea is empty');
-    return false;
+    return displayError('Textarea is empty');
   }
   if (text.length > 140) {
-    console.log('Textarea is too long');
-    return false;
+    return displayError('Textarea is too long');
   }
   // Validate success
   return true;
@@ -107,7 +112,7 @@ const loadPosts = function (renderCallback) {
     // Render fetched posts
     renderCallback(data);
   }).fail((error) => {
-    console.log('Fetch posts from server failed', error);
+    displayError('Fetch posts from server failed', error);
   });
 };
 

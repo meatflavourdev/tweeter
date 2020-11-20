@@ -49,11 +49,12 @@
     <script src="vendor/he.js" crossorigin="anonymous"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <!-- <script type="text/javascript" src="/scripts/nav-fixed.js"></script> -->
     <script type="text/javascript" src="/scripts/compose-text.js"></script>
     <script type="text/javascript" src="/scripts/button-top.js"></script>
+    <script type="text/javascript" src="/scripts/toast.js"></script>
+    <script type="text/javascript" src="/scripts/client.js"></script>
   </head>
 
   <body>
@@ -68,9 +69,9 @@
     </a>
 
     <!-- Validation Error Display -->
-    <div id="toast-container" style="display: none;">
-      <div class="toast-error notification is-danger">
-        <button class="toast-close"></button>
+    <div id="toast-container">
+      <div class="toast-error notification is-danger toast-hidden" style="display: none;">
+        <button class="toast-close delete"></button>
         <span id="toast-body"></span>
       </div>
     </div>
