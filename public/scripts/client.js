@@ -116,7 +116,7 @@ const loadPosts = function (renderCallback) {
   });
 };
 
-$(document).ready(function() {
+$(function() {
   // Compose form submit event handler
   $("#compose-form").on("submit", submitPost);
   // Display posts from server on load
