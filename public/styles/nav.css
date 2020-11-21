@@ -1,7 +1,7 @@
 /* nav.css */
 
 nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   height: 90px;
   width: 100%;

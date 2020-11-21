@@ -1,24 +1,12 @@
-$(document).ready(function () {
-  let previousScroll = 0;
-  $(window).scroll(function () {
-    let currentScroll = $(this).scrollTop();
-    if (currentScroll < 100) {
-      showTopNav();
-    } else if (currentScroll > 0 && currentScroll < $(document).height() - $(window).height()) {
-      if (currentScroll > previousScroll) {
-        hideNav();
-      } else {
-        showNav();
-      }
-      previousScroll = currentScroll;
-    }
+$(function () {
+  const mainNav = $('#nav-main');
+  $(window).on('scroll', function() {
+    const scrollTop     = $(window).scrollTop();
+    const elementOffset = mainNav.offset().top;
+    const distance      = (elementOffset - scrollTop);
+    const height = mainNav.height;
+    const min = -1 * height;
+    console.log(`navPostion: `, distance);
+    //if(distance < min) mainNav.attr('top', )
   });
-
-  const hideNav = function() {
-    $(".mainnav").removeClass("isvisible").addClass("ishidden");
-  };
-
-  const showNav = function() {
-    $(".mainnav").removeClass("ishidden").addClass("isvisible").addClass("scrolling");
-  };
 });
