@@ -4,7 +4,7 @@
     <!-- Meta Information -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!-- Title -->
     <title>Tweeter - Home Page</title>
@@ -45,8 +45,13 @@
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/dayjs.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/plugin/relativeTime.min.js" crossorigin="anonymous"></script>
-    <script>dayjs.extend(window.dayjs_plugin_relativeTime)</script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/plugin/relativeTime.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      dayjs.extend(window.dayjs_plugin_relativeTime);
+    </script>
     <script src="vendor/he.js" crossorigin="anonymous"></script>
 
     <!-- App JS -->
@@ -63,16 +68,14 @@
     <div class="top"></div>
 
     <!-- Back to Top Button -->
-    <a id="button-top" class="button is-danger" href="#top" style="display: none;">
+    <a id="button-top" class="button is-danger" href="#top" style="display: none">
       <span class="icon">
-        <i class="fas fa-angle-double-up fa-2x"></i>
+        <i class="fas fa-angle-double-up fa-lg"></i>
       </span>
     </a>
 
     <!-- Validation Error Display -->
-    <div id="toast-container">
-
-    </div>
+    <div id="toast-container"></div>
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-main" class="mainnav">
@@ -84,32 +87,32 @@
         <span><span class="has-text-weight-semibold">Write</span> a New Tweet</span>
       </div>
     </nav>
+    <div id="meta-container">
+      <header id="header-main-profile">
+        <figure class="profile-image">
+          <img src="/images/profile-hex.png" alt="Profile Picture" />
+        </figure>
+        <div>
+          <h2 class="is-size-2"><span class="has-text-weight-semibold">Jeremy</span> Felix D.</h2>
+        </div>
+      </header>
 
-    <header id="header-main-profile">
-      <figure class="profile-image">
-        <img src="/images/profile-hex.png" alt="Profile Picture" />
-      </figure>
-      <div>
-        <h2 class="is-size-2"><span class="has-text-weight-semibold">Jeremy</span> Felix D.</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main id="page-content" class="px-5">
-      <section class="compose container card px-5 pt-5 pb-4 mb-4 new-tweet">
-        <form id="compose-form" action="/tweets/" method="post">
-          <div class="form-textinput">
-            <label id="tweet-message" for="tweet-text"></label>
-            <textarea name="text" id="tweet-text" title="tweet-text"></textarea>
-          </div>
-          <div class="form-extrabits mt-3">
-            <button id="compose-submit" class="button is-primary" type="submit">Tweet</button>
-            <output id="compose-counter" name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-      <section id="postlist" class="container">
-      </section>
-    </main>
+      <!-- Page-specific (main) content here -->
+      <main id="page-content">
+        <section class="compose container card new-tweet">
+          <form id="compose-form" action="/tweets/" method="post">
+            <div class="form-textinput">
+              <label id="tweet-message" for="tweet-text"></label>
+              <textarea name="text" id="tweet-text" title="tweet-text"></textarea>
+            </div>
+            <div class="form-extrabits mt-3">
+              <button id="compose-submit" class="button is-primary" type="submit">Tweet</button>
+              <output id="compose-counter" name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <section id="postlist" class="container"></section>
+      </main>
+    </div>
   </body>
 </html>

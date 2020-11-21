@@ -6,10 +6,12 @@
 
 article.post {
   border: 1px solid rgba(0,0,0,0.2);
-  border-radius: .4rem;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
   box-shadow: none;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
-  margin-top: 0.75rem;
+  margin-top: 0.25rem;
   padding: 1.5rem 1.5rem;
 }
 
@@ -50,4 +52,14 @@ article.post footer {
 article.post footer .post-actions .fa-md {
   height: 1em;
   padding: 0 0.25em;
+}
+
+/* --------- Responsive Design Rules ---------- */
+
+@media (min-width: 500px) {
+  article.post {
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: .4rem;
+    margin-top: 0.75rem;
+  }
 }
