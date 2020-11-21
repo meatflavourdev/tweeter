@@ -67,24 +67,58 @@ const renderNewPosts = function(postArray) {
   $("#postlist").prepend($collection);
 };
 
-const displayError = function(msg, err) {
-  $('#toast-body').html(msg);
-  $('#toast-container > .toast-error').show();
-  $('#toast-container .toast-close').on('click', function(e) {
-    $(this).parent().hide();
+const getToastTemplate = function(message) {
+  return `
+  <div class="toast-error notification is-danger toast-hidden">
+    <button class="toast-close delete"></button>
+    <span id="toast-body">${message}</span>
+  </div>
+  `;
+};
+
+const popToast = function (msg, err) {
+  // Record prev number of toasts
+  const prevLength = $("#toast-container").length;
+  // Get new toast template
+  const thisToast = $(getToastTemplate(msg));
+  $("#toast-container").append(thisToast);
+  // Delete toast function
+  const deleteToast = function(timeout = 0) {
+    setTimeout(() => {
+      thisToast.addClass("toast-delete").one("transitionend", function() {
+        thisToast.remove();
+      });
+    }, timeout);
+  };
+  // Add event handler for close button
+  thisToast.children(".toast-close").on("click", function(e) {
+    deleteToast();
+  });
+  // Close on submit
+  $('#compose-submit').on('click', function() {
+    deleteToast();
+  });
+  // Delete the toast after a timer
+  deleteToast(2000);
+  // Unhide after append is complete and we wait a bit for the DOM to catch up
+  $.when($("#toast-container").hasClass('toast-hidden')).then(function() {
+    setTimeout(() => {
+      thisToast.toggleClass("toast-hidden");
+    }, 50);
+
   });
 };
 
 const validInput = function() {
   const text = $('#tweet-text').val();
   if (text === null || text === undefined) {
-    return displayError('Textarea value is null or undefined');
+    return popToast('Textarea value is null or undefined. Call your sysadmin! &#128222;&#128190;');
   }
   if (!text.length) {
-    return displayError('Textarea is empty');
+    return popToast(`I can't publish that-- it's blank! &#129531;`);
   }
   if (text.length > 140) {
-    return displayError('Textarea is too long');
+    return popToast(`I know you have a lot to say but we've got rules you know. &#129335;&#8205;&#9794;&#65039;`);
   }
   // Validate success
   return true;
@@ -103,7 +137,7 @@ const submitPost = function (event) {
     $('#tweet-text').val('');
     $('#compose-counter').html('140'); // Reset counter
   }).fail((error) => {
-    console.log("Compose form submission failed", error);
+    popToast("Compose form submission failed", error);
   });
 };
 
@@ -112,7 +146,7 @@ const loadPosts = function (renderCallback) {
     // Render fetched posts
     renderCallback(data);
   }).fail((error) => {
-    displayError('Fetch posts from server failed', error);
+    popToast('Fetch posts from server failed', error);
   });
 };
 

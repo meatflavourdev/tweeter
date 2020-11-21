@@ -1,1 +1,5 @@
 // toast.js
+
+const toast = {
+
+};
