@@ -1,8 +1,15 @@
 /* compose.css */
 
 section.compose {
-  border-radius: .4rem;
-  border: 1px solid rgba(0,0,0,.5);
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-left: 0;
+  border-right: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 section.compose #tweet-message {
@@ -32,15 +39,23 @@ section.compose .form-extrabits {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: 'Bungee', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Bungee", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 section.compose .form-extrabits .button {
-  font-family: 'Bungee', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Bungee", "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 2.25rem;
 }
 
-
 .negative {
   color: red;
+}
+
+/* --------- Responsive Design Rules ---------- */
+
+@media (min-width: 500px) {
+  section.compose {
+    border-radius: 0.4rem;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
 }
