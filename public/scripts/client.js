@@ -42,6 +42,7 @@ const getPostID = function(post) {
 
 const postIDs = [];
 const renderPosts = function(postArray) {
+  // Loop through post array oldest first and append
   while (postArray.length) {
     const postJSON = postArray.pop();
     const postID = getPostID(postJSON);
@@ -53,12 +54,14 @@ const renderPosts = function(postArray) {
 
 const renderNewPosts = function(postArray) {
   let $collection = [];
+  // Loop through post array oldest first
   while (postArray.length) {
     const postJSON = postArray.pop();
     const postID = getPostID(postJSON);
     // Stop once we get to a post we already have
     if (postIDs.includes(postID)) break;
-    postIDs.push(postID); // Remember the posts that have been seen already
+    // Remember the posts that have been seen already
+    postIDs.push(postID);
     // Build an array of new posts
     const $post = createPostElement(postJSON);
     $collection.push($post);
