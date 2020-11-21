@@ -18,7 +18,8 @@ section.compose .form-textinput textarea {
   border: 0;
   border-bottom: 1px solid #000000;
   outline: none;
-  height: 2.8em;
+  height: 1.5em;
+  margin-top: 1.2em;
   background-color: transparent;
 }
 
@@ -36,6 +37,7 @@ section.compose .form-extrabits {
 
 section.compose .form-extrabits .button {
   font-family: 'Bungee', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  height: 2.25rem;
 }
 
 
