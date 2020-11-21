@@ -24,3 +24,13 @@
   letter-spacing: -0.03em;
   -webkit-filter: drop-shadow(2px 3px 8px rgba(0,0,0,0.35));
 }
+
+
+
+/* --------- Responsive Design Rules ---------- */
+
+@media (min-width: 1440px) {
+  #header-main-profile figure.profile-image {
+    border-radius: 0.7rem;
+  }
+}
