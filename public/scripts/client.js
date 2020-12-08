@@ -153,9 +153,19 @@ const loadPosts = function (renderCallback) {
   });
 };
 
+const initCompose = function() {
+  $('#nav-button-new').on('click', (e) => {
+    $('#compose-section').slideToggle(300, () => {
+      // Complete
+    });
+  });
+}
+
 $(function() {
   // Compose form submit event handler
   $("#compose-form").on("submit", submitPost);
   // Display posts from server on load
   loadPosts(renderPosts);
+  // Set compose toggle handler
+  initCompose();
 });

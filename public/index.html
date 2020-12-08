@@ -80,7 +80,7 @@
     <!-- Top nav bar (fixed) -->
     <nav id="nav-main" class="mainnav">
       <span class="logo">Tweeter</span>
-      <div class="button-new">
+      <div id="nav-button-new">
         <div class="icon">
           <i class="fas fa-angle-double-down"></i>
         </div>
@@ -99,7 +99,7 @@
 
       <!-- Page-specific (main) content here -->
       <main id="page-content">
-        <section class="compose container card new-tweet">
+        <section id="compose-section" class="compose container card new-tweet" style="display: none;">
           <form id="compose-form" action="/tweets/" method="post">
             <div class="form-textinput">
               <label id="tweet-message" for="tweet-text"></label>
