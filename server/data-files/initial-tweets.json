@@ -2,23 +2,56 @@
   {
     "user": {
       "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
+      "avatars": "https://avatars.dicebear.com/4.4/api/avataaars/Newton.svg",
       "handle": "@SirIsaac"
     },
     "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
-    "created_at": 1461116232227
+    "created_at": 1606952545236
   },
   {
     "user": {
       "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
+      "avatars": "https://avatars.dicebear.com/4.4/api/avataaars/Descartes.svg",
+      "handle": "@rd"
+    },
     "content": {
       "text": "Je pense , donc je suis"
     },
-    "created_at": 1461113959088
+    "created_at": 1607038945236
+  },
+  {
+    "user": {
+      "name": "Reginald",
+      "avatars": "https://avatars.dicebear.com/4.4/api/avataaars/Reginald.svg",
+      "handle": "@rd"
+    },
+    "content": {
+      "text": "Just posted a photo @ MASC"
+    },
+    "created_at": 1607125345236
+  },
+  {
+    "user": {
+      "name": "Alice",
+      "avatars": "https://avatars.dicebear.com/4.4/api/avataaars/Alice.svg",
+      "handle": "@rd"
+    },
+    "content": {
+      "text": "Stadia: You can play Unreal games in your browser. Twitter: LOL! This is stupid."
+    },
+    "created_at": 1607211745236
+  },
+  {
+    "user": {
+      "name": "Baker",
+      "avatars": "https://avatars.dicebear.com/4.4/api/avataaars/Baker.svg",
+      "handle": "@rd"
+    },
+    "content": {
+      "text": "I hated utility CSS until every argument I had against it was proven invalid. I couldn’t imagine going back to my old way."
+    },
+    "created_at": 1607298145236
   }
 ]

@@ -18,7 +18,7 @@ const createPostElement = function(post) {
   <article class="post card is-primary">
     <header>
       <div class="profile-info pb-4">
-        <img class=profile-avatar" src="${htmlEncode(post.user.avatars)}" alt="User Avatar" />
+        <img class=profile-avatar" width="85" height="85" style="border-radius: 50%; border: 1px solid rgba(0,0,0,0.2);" src="https://avatars.dicebear.com/4.4/api/avataaars/${htmlEncode(post.user.name)}.svg" alt="User Avatar" />
         <h2 class="has-text-weight-semibold p-3">${htmlEncode(post.user.name)}</h2>
       </div>
       <h3 class="profile-username">${htmlEncode(post.user.handle)}</h3>

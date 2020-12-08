@@ -17,6 +17,7 @@
   width: 256px;
   border-radius: 100%;
   -webkit-filter: drop-shadow(2px 3px 8px rgba(0,0,0,0.35));
+  overflow: hidden;
 }
 
 #header-main-profile h2 {
