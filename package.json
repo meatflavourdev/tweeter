@@ -11,16 +11,16 @@
   "author": "Lighthouse Labs",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.2",
+    "body-parser": "^1.20.5",
     "chance": "^1.0.2",
     "dayjs": "^1.9.6",
-    "express": "^4.13.4",
+    "express": "^4.22.2",
     "md5": "^2.1.0"
   },
   "devDependencies": {
     "he": "^1.2.0",
     "jquery": "^3.5.1",
-    "ngrok": "^3.3.0",
-    "nodemon": "^1.9.2"
+    "ngrok": "^5.0.0-beta.2",
+    "nodemon": "^3.1.14"
   }
 }
